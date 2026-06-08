@@ -1,0 +1,552 @@
+/* successfully imported montserrat for body text and molle for headings from google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Molle:ital@1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* root variables for colors and fonts */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --pink: #d6007d;
+    --dark-gray: #333333;
+    --light-purple: #f9e3f8;
+    --main-font: "Montserrat", sans-serif;
+    --secondary-font: "Molle", cursive;
+    }
+
+:root body.dark-mode {
+    --body-white: #1a1a1d;
+    --body-black: #f2f2f2;
+    --body-gray: #eae4e4;
+    --body-magenta: #931868;
+    }
+
+/* global styles to help with layout structure */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* body, header, and nav styles */
+body {
+    margin: 0;
+    font-family: var(--main-font);
+    background-color: var(--white);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+}
+
+header img {
+    width: 70px;
+    height: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+h1 {
+    visibility: hidden;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li a {
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--black);  
+}
+
+nav li a:hover {
+    color: var(--pink);
+}
+
+/* hero banner styles */
+#hero-banner img {
+    display: flex;
+    max-width: 1440px;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#hero-banner h2 {
+    visibility: hidden;
+}
+
+/* dark/light mode button toggles, removing background, and allowing the ability for the user to click toggling the modes */
+#mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+/* resize the sun (light mode) and moon (dark mode) icons to fit the right corner of the header */
+button img {
+    width: 55px;
+}
+
+/* dark mode (to prevent from displaying in default light mode) */
+.sun-icon {
+    display: none;
+}
+
+img.sun-icon {
+    background-color: var(--body-black);
+    border-radius: 4px;
+    padding: 0;
+}
+
+/* light mode (to prevent from displaying in the dark mode) */
+body.dark-mode .moon-icon {
+    display: none;
+}
+
+/* dark mode font, background, and button color changes */
+body.dark-mode .sun-icon {
+    display: inline;
+}
+
+body.dark-mode {
+    background-color: var(--body-white);
+    color: var(--body-black);
+}
+
+body.dark-mode nav li a {
+    color: var(--body-black);
+}
+
+body.dark-mode nav li a:hover {
+    color: var(--body-magenta);
+}
+
+body.dark-mode button {
+    background-color: var(--body-magenta);
+    color: var(--body-black);
+}
+
+body.dark-mode button:hover {
+    background-color: var(--body-black);
+    color: var(--body-white);
+}
+
+body.dark-mode #cart button {
+    background-color: var(--body-magenta);
+    color: var(--white);
+}
+
+body.dark-mode #cart button:hover {
+    background-color: var(--body-black);
+    color: var(--body-white);
+}
+
+body.dark-mode .about-content {
+    background-color: var(--body-magenta);
+}
+
+body.dark-mode .about-info hr {
+    border: none;
+    border-top: 1px solid var(--body-black);
+    margin: 20px 0;
+    width: 596px;
+}
+
+body.dark-mode footer {
+    background-color: var(--body-magenta);
+    color: var(--white);
+}
+
+/* main content styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* products collection styles */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    align-content: center;
+}
+
+.products-grid img {
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.products-grid img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.btn-add {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.btn-add:hover {
+    background-color: var(--dark-gray);
+}
+
+/* collections styles, body mists and body lotions section */
+#mist {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#lotion {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#mist h2 {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#lotion h2 {
+    margin-top: 45px;
+    margin-bottom: 25px;
+    font-family: var(--main-font);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#mist h3, 
+#lotion h3 {
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#mist p, 
+#lotion p {
+    font-size: 13px;
+}
+
+#mist span, 
+#lotion span {
+    font-family: var(--main-font);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+p {
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* add to cart section styles */
+#cart {
+    display: inline-block;
+    justify-content: center;
+    margin-top: 25px;
+    width: 350px;
+}
+
+#cart h2 {
+    font-family: var(--main-font);
+    font-size: 20px;
+}
+
+#cart button {
+    width: 350px;
+    padding: 12px 16px;
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 90%;
+    margin-top: 15px;
+}
+
+#cart button:hover {
+    background-color: var(--dark-gray);
+}
+
+/* products collection section styles */
+#products-collection h2 {
+    visibility: hidden;
+}
+
+#products-collection img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.products-item button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 9px;
+    font-family: var(--main-font);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 90%;
+    margin-top: 15px;
+}
+
+/* about section styles */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    background-color: var(--light-purple);
+    border-radius: 4px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.about-image img {
+    width: 600px;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.about-info {
+    display: block;
+    width: 605px;
+    height: 470px;
+}
+
+.about-info hr {
+    border: none;
+    border-top: 1px solid var(--black);
+    margin: 20px 0;
+    width: 596px;
+}
+
+.about-info h2 {
+    text-align: center;
+    font-size: 37px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+}
+
+.about-info h3 {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 30px;
+    font-family: var(--main-font);
+    font-weight: 500;
+}
+
+.about-info p {
+    margin-top: 20px;
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 400;
+    width: 58ch;
+    line-height: 1.5rem;
+    margin-top: 36px;
+}
+
+/* collections section styles */
+#collections h2 {
+    font-family: var(--main-font);
+    font-size: 18px;
+    margin-top: 35px;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    align-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.collections-grid img {
+    width: 100%;
+    height: 360px;
+    border-radius: 6px;
+}
+
+.collections-grid img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* contact form section styles */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1100px;
+    font-family: var(--main-font);
+    font-weight: 500;
+}
+
+.form-left,
+.form-right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+}
+
+.contact-form label {
+    margin-top: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.6rem;
+    font-family: var(--main-font);
+    margin-top: 0.5rem;
+}
+
+.form-left input {
+    width: 450px;
+}
+
+textarea {
+    width: 420px;
+    min-height: 90px;
+    resize: vertical;
+    margin-bottom: 0.5rem;
+}
+
+.radio-group {
+    margin: 1rem 0;
+    border: none;
+    padding: 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.radio-group input[type="radio"] {
+    margin: 0;
+    transform: translateY(0.5px);
+}
+
+.contact-form input {
+    font-size: 14px;
+}
+
+#contact h2 {
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+#contact p {
+    font-size: 16px;
+}
+
+/* contact form submit button styles */
+.form-right button {
+    font-family: var(--main-font);
+    padding: 15px;
+    font-size: 18px;
+    width: 422px;
+    cursor: pointer;
+    font-weight: 400;
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 11px 20px;
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 3px;
+    width: 77%;
+    margin-top: 15px;
+}
+
+.form-right button:hover {
+    background-color: var(--dark-gray);
+}
+
+/* contact form validation error and success message styles */
+/* error message */
+.error {
+    display: block;
+    color: #b00020;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* success message */
+.success-message p {
+    display: inline-block;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 16px;
+    font-family: var(--main-font);
+}
+
+/* footer styles */
+footer {
+    background-color: var(--pink);
+    width: 1440px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    margin-top: 40px;
+    font-family: var(--main-font);
+}

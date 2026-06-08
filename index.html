@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EOS Evolution of Smooth</title>
+
+<!-- google fonts Molle and Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Molle:ital@1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- properly linked both CSS and JavaScript files -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<!-- make sure to add dark mode, "use strict"; , and look through final project requirements and criteria to ensure everything 
+is up to par before submitting the final product -->
+
+<!-- all images and assets were downloaded and saved from Google and the EOS official website for inspiration 
+purposes to recreate the original EOS design and aesthetic through my personalized redesign of the company's website -->
+
+<body>
+    <!-- header of the website containing the EOS logo to the right, the nav links with a hover functionality before being clicked 
+    on, and the moon and sun icons for the user to toggle a dark and light mode based on their preference of a display color for
+    an easier user experience -->
+
+    <header id="home" class="container">
+        <img src="images/eos-logo.png" alt="eos logo">
+        <h1>EOS</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#mist">PRODUCTS</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <button id="mode-toggle" aria-label="toggle light and dark mode">
+            <img src="images/moon-icon.svg" class="moon-icon" alt="light mode">
+            <img src="images/sun-icon.svg" class="sun-icon" alt="dark mode">
+        </button>
+    </header>
+
+    <!-- main section of the webpage creating a structured layout to display all of the EOS content (images) and products, along with
+    a hero banner displaying the company's popular body mists -->
+    <main class="container">
+        <section id="hero-banner">
+            <h2>EOS</h2>
+            <img src="images/eos-collection.jpg" alt="eos body mist collection hero">
+        </section>
+
+        <!-- body mist section and body lotion section for best selling products being body mists and body lotion, the products are displayed in two separate sections within the main product section,
+        in two rows with four products each along with the product name, scent, price, and a "add to cart" button for functionality purposes
+        allowing the user to add items to their cart -->
+
+            <!-- link "add to cart" buttons for each product to the cost calculator function after I code it in my JavaScript file -->
+            <section id="mist">
+                <h2>Best Selling Body Mists </h2>
+                <div class="products-grid">
+                    <div class="products-item">
+                        <img src="images/vanilla-bodymist.jpg" alt="vanilla cashmere body mist">
+                        <h3>Vanilla Cashmere</h3>
+                        <p class="description">body mist</p>
+                        <span class="product-price">$12.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+
+                    <div class="products-item">
+                        <img src="images/coconut-bodymist.jpg" alt="coconut waters body mist">
+                        <h3>Coconut Waters</h3>
+                        <p class="description">body mist</p>
+                        <span class="product-price">$12.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+
+                    <div class="products-item">
+                        <img src="images/pistachio-bodymist.jpg" alt="creme de pistachio body mist">
+                        <h3>Creme de Pistachio</h3>
+                        <p class="description">body mist</p>
+                        <span class="product-price">$12.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+
+                    <div class="products-item">
+                        <img src="images/champagne-bodymist.jpg" alt="pink champagne body mist">
+                        <h3>Pink Champagne</h3>
+                        <p class="description">body mist</p>
+                        <span class="product-price">$12.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="lotion">
+                <h2>Best Selling Body Lotions</h2>
+                <div class="products-grid">
+                    <div class="products-item">
+                        <img src="images/vanilla-lotion.jpg" alt="vanilla cashmere body lotion">
+                        <h3>Vanilla Cashmere</h3>
+                        <p class="description">body lotion</p>
+                        <span class="product-price">$10.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+
+                    <div class="products-item">
+                        <img src="images/coconut-lotion.jpg" alt="coconut waters body lotion">
+                        <h3>Coconut Waters</h3>
+                        <p class="description">body lotion</p>
+                        <span class="product-price">$10.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+
+                    <div class="products-item">
+                        <img src="images/pistachio-lotion.jpg" alt="creme de pistachio body lotion">
+                        <h3>Creme de Pistachio</h3>
+                        <p class="description">body lotion</p>
+                        <span class="product-price">$10.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+
+                    <div class="products-item">
+                        <img src="images/pink-lotion.jpg" alt="pink champagne body lotion">
+                        <h3>Pink Champagne</h3>
+                        <p class="description">body lotion</p>
+                        <span class="product-price">$10.99</span>
+                        <button type="submit" class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- cost calculator (shopping cart) feature specifically for best selling products (body mists and body lotions)-->
+            <section id="cart">
+                <!-- add a cart icon at the beginning of "your cart" -->
+                <h2>Your Cart</h2>
+            
+                <div class="cart-totals">
+                    <p>Sub-Total: <span id="subtotal">$0.00</span></p>
+                    <p>Tax Rate (8%): <span id="tax">$0.00</span></p>
+                    <p>Shipping: <span id="shipping">Flat $5.00</span></p>
+                    <br>
+                    <p><strong>Cart Total: <span id="total">$0.00</span></strong></p>
+                </div>
+
+                <button id="checkoutBtn">Check Out</button>
+
+                <!-- display success message thanking the user for their purchase -->
+                <p id="cartMessage" class="success-message"></p>
+            </section>
+
+            <!-- a hero banner promoting the most popular product collection for EOS being the vanilla cashmere line -->
+        <section id="products-collection">
+            <h2>Our Products Collection</h2>
+            <img src="images/eos_bn.jpg" alt="eos vanilla cashmere self care products collection"> 
+        </section>
+
+            <!-- a section for the most popular collections EOS has, showing the user what other products they can 
+            choose from to purchase -->
+        <section id="collections">
+            <h2>OUR COLLECTIONS</h2>
+
+            <div class="collections-grid">
+                <div class="shave-oil">
+                    <img src="images/shave-oil.jpg" alt="eos shave oil collection">
+                    <p>Shave Oil</p>
+                </div>
+
+                <div class="super-balm">
+                    <img src="images/eos-superbalm.jpg" alt="eos super balm collection">
+                    <p>Super Balm</p>
+                </div>
+
+                <div class="body-lotion">
+                    <img src="images/eos-bodylotion.jpg" alt="eos body lotion collection">
+                    <p>Body Lotion</p>
+                </div>
+
+                <div class="body-wash">
+                    <img src="images/eos-bodywash.jpg" alt="eos body wash collection">
+                    <p>Body Wash</p>
+                </div>
+            </div>
+        </section>
+
+            <!-- about section telling the user what the company stands for and who they are as one of the top skincare and self 
+            care product companies -->
+        <section id="about">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/eos-models.jpg" alt="two women modeling for eos brand">
+                </div>
+        
+                <div class="about-info">
+                    <h2>we create nourishing skincare for everywhere</h2>
+                    <hr>
+                    <h3>Self-care should be an every day thing that feels like a spa day.</h3>
+                    <p>We create skincare that makes you feel amazing from the first swipe to the final glow. 
+                        Our formulas are powered by high-performance ingredients and wrapped in mood-lifting scents. 
+                        Everything we make is designed to bring a little joy to your daily routine. We pack every product 
+                        with ingredients your skin loves—like shea butter, coconut oil, and argan butter—and 
+                        leave out the stuff it does not (parabens, phthalates, gluten). Every swipe, pump, 
+                        or lather feels luxe and delivers real results.</p>
+                </div>
+            </div>
+        </section>
+
+            <!-- contact section allowing the user to contact the company for additional information about their products or 
+            questions, allowing them to submit a form with their personal information -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Don't hesitate to reach out for additional information or with any questions!</p>
+
+            <form id="contactForm" novalidate class="contact-form">
+                <div class="form-left">
+                    <label for="name">Full Name: <span class="error" id="nameError"></span></label>
+                    <input type="text" id="name" name="name">
+            
+                    <label for="phone">Phone: <span class="error" id="phoneError"></span></label>
+                    <input type="tel" id="phone" name="phone">
+            
+                    <label for="email">Email: <span class="error" id="emailError"></span></label>
+                    <input type="email" id="email" name="email">
+                </div>
+            
+                <div class="form-right">
+                    <label for="comments">Comments: <span class="error" id="commentsError"></span></label>
+                    <textarea id="comments" name="comments"></textarea>
+            
+                    <fieldset class="radio-group">
+                        Preferred Contact Method
+                        <span class="error" id="contactMethodError"></span>
+            
+                        <label>
+                            <input type="radio" name="contactMethod" value="phone">
+                            Phone
+                        </label>
+            
+                        <label>
+                            <input type="radio" name="contactMethod" value="email">
+                            Email
+                        </label>
+
+                    </fieldset>
+            
+                    <button type="submit">Submit</button>
+                </div>
+            </form>     
+            
+            <!-- display a success message that thanks the user for successfully submitting the form -->
+            <div id="successMessage" class="success-message"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 eos. All rights reserved.</p>
+    </footer>
+</body>
+</html>
